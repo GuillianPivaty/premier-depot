@@ -3,9 +3,89 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>L'histoire des flibustier Martiniquais</title>
 </head>
 <body>
-    
+    <h1>L'histoire de Ti-Jean, le Flibustier Créole</h1>
+    <div id="story">
+        <p>
+            Il était une fois, sur les côtes sauvages de la Martinique, un jeune flibustier nommé Ti-Jean. Né d’un pêcheur et d’une marchande, il grandit au rythme des vagues et des récits de pirates. Intrépide et rusé, Ti-Jean rêvait de parcourir la mer des Caraïbes à la recherche de trésors cachés.
+        </p>
+        <p>
+            Un matin, alors que le soleil dorait la baie de Saint-Pierre, Ti-Jean découvrit une vieille carte au fond d’un coffre oublié. Avec son équipage de marins créoles, il embarqua sur la goélette <em>La Belle Créole</em>. Ensemble, ils bravèrent les tempêtes, défièrent les navires ennemis et explorèrent les îlets secrets.
+        </p>
+        <p>
+            Leur aventure les mena jusqu’à la mystérieuse île aux Iguanes, réputée pour ses légendes et ses dangers. Là, Ti-Jean dut résoudre des énigmes gravées sur des pierres anciennes, tout en évitant les pièges laissés par d’anciens flibustiers. Son équipage, soudé par l’amitié et la confiance, l’aida à surmonter chaque épreuve.
+        </p>
+        <p>
+            Après de longues semaines en mer, ils affrontèrent une tempête redoutable. Les vagues déchaînées mirent leur courage à l’épreuve, mais grâce à la détermination de Ti-Jean, le navire survécut. Épuisés mais victorieux, ils atteignirent enfin la crique secrète indiquée sur la carte.
+        </p>
+        <p>
+            Là, caché sous un vieux manguier, ils découvrirent le trésor tant convoité : un coffre rempli de pièces d’or, de bijoux et de perles rares. Mais Ti-Jean comprit que le vrai trésor était l’aventure partagée, la solidarité de son équipage et la liberté de voguer sur la mer turquoise de la Martinique.
+        </p>
+        <p>
+            De retour à Saint-Pierre, Ti-Jean devint une légende. Les enfants du village écoutaient ses récits, rêvant à leur tour de larguer les amarres. Ainsi, l’esprit du flibustier créole continua de vivre, porté par les alizés et les vagues de la Martinique.
+        </p>
+    </div>
+    <button id="changeColorBtn">Changer le style</button>
+    <style>
+        body {
+            background: linear-gradient(120deg, #e0c3fc 0%, #8ec5fc 100%);
+            font-family: 'Georgia', serif;
+            margin: 0;
+            padding: 0;
+        }
+        #story {
+            background: rgba(255,255,255,0.85);
+            max-width: 700px;
+            margin: 40px auto;
+            padding: 30px 40px;
+            border-radius: 16px;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.12);
+        }
+        h1 {
+            text-align: center;
+            color: #2d3a4b;
+            margin-top: 40px;
+            font-size: 2.5em;
+            letter-spacing: 1px;
+        }
+        #story p {
+            font-size: 1.2em;
+            line-height: 1.7;
+            color: #3b2f2f;
+            margin-bottom: 1.2em;
+        }
+        #changeColorBtn {
+            display: block;
+            margin: 20px auto 40px auto;
+            padding: 12px 28px;
+            font-size: 1em;
+            background: #2d3a4b;
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        #changeColorBtn:hover {
+            background: #4b5d6b;
+        }
+    </style>
+    <script>
+        const colors = [
+            {bg: "#f9d29d", text: "#3b2f2f"},
+            {bg: "#a1c4fd", text: "#2d3a4b"},
+            {bg: "#fbc2eb", text: "#4b2e83"},
+            {bg: "#cfd9df", text: "#2d3a4b"}
+        ];
+        let current = 0;
+        document.getElementById('changeColorBtn').addEventListener('click', function() {
+            current = (current + 1) % colors.length;
+            document.getElementById('story').style.background = colors[current].bg;
+            let ps = document.querySelectorAll('#story p');
+            ps.forEach(p => p.style.color = colors[current].text);
+        });
+    </script>
 </body>
 </html>
